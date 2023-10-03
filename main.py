@@ -78,7 +78,7 @@ def jobpage():
             sql = "SELECT * FROM data WHERE id = %s AND jobs=0"
             val = (id, )
             cursorObject.execute(sql, val)
-            # if the record does not exist, insert a new recor
+            # if the record does not exist, insert a new record
             if cursorObject.fetchone() is None:
                 sql ="UPDATE data SET jobs = 1 WHERE id = %s"
                 val= (id, )
@@ -93,5 +93,5 @@ try:
   jobpage()
   print("Data Scraping Completed")
 except Exception as error:
-  print("An error occurred:", type(error).__name__) # An error occurred: NameError
+  print("An error occurred:", type(error).__name__) 
 dataBase.close()
